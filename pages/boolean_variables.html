@@ -16,7 +16,6 @@
 <li><a href="what_is_tafc.html">What is TAFC</a></li>
 <li><a href="tafc_releases.html">TAFC releases</a></li>
 <li><a href="what_is_t24.html">What is T24</a></li>
-<li><a href="supported_platforms.html">Supported platforms</a></li>
 <li><a href="jbc_jbase_features.html">jBC/jBASE features</a></li>
 </ul>
 <h2>Introduction to some jBC syntax features</h2>
@@ -445,7 +444,27 @@
 <p>Boolean variables as such don't exist in jBC; the result of a statement like IF (VAR) THEN...
  depends on that variable contents:
 </p>
-<pre><span>    <span class="c-1com">IF</span> <span class="c-0fun">NOT</span>(unassigned_var) <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'Unassigned var is false'</span></span><span>    true_var = <span class="c-2num">1</span> ; false_var = <span class="c-2num">0</span></span><span>    <span class="c-1com">IF</span> true_var <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'1 is true'</span></span><span>    <span class="c-1com">IF</span> <span class="c-0fun">NOT</span>(false_var) <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'0 is false'</span></span><span>    a_string = <span class="c-4str">'YES'</span></span><span>    <span class="c-1com">IF</span> a_string <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'Non-empty string is true'</span></span><span>    <span class="c-1com">IF</span> <span class="c-0fun">NOT</span>(<span class="c-4str">'0.00'</span>) <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'0.00 is false'</span></span><span>    <span class="c-1com">IF</span> <span class="c-0fun">NOT</span>(<span class="c-4str">'-0.00'</span>) <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'"-0.00" is still false - treated as numeric'</span></span><span>    <span class="c-5com">* and this test depends on PRECISION</span></span><span>    <span class="c-1com">PRECISION</span> <span class="c-2num">9</span></span><span>    <span class="c-1com">IF</span> <span class="c-0fun">NOT</span>(<span class="c-4str">'0.00000000000001'</span>) <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'0.00000000000001 is false'</span> \</span><span>          <span class="c-1com">ELSE</span> <span class="c-1com">CRT</span> <span class="c-4str">'0.00000000000001 is true'</span></span><span>    <span class="c-1com">PRECISION</span> <span class="c-2num">17</span></span><span>    <span class="c-1com">IF</span> <span class="c-0fun">NOT</span>(<span class="c-4str">'0.00000000000001'</span>) <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'0.00000000000001 is false'</span> \</span><span>          <span class="c-1com">ELSE</span> <span class="c-1com">CRT</span> <span class="c-4str">'0.00000000000001 is true with PRECISION 17'</span></span><span> <span class="c-5com">*------------------------------------------------------------------------</span></span><span> <span class="c-6lbl">ANOTHER.METHOD:</span></span><span>    <span class="c-5com">*</span></span><span>    <span class="c-1com">CRT</span> <span class="c-3typ">@TRUE</span></span><span>    <span class="c-1com">CRT</span> <span class="c-3typ">@FALSE</span></span><span>    </span></pre>
+<pre><span>       <span class="c-1com">IF</span> <span class="c-0fun">NOT</span>(unassigned_var) <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'Unassigned var is false'</span>
+</span><span>       true_var = <span class="c-2num">1</span>  ;  false_var = <span class="c-2num">0</span>
+</span><span>       <span class="c-1com">IF</span> true_var <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'1 is true'</span>
+</span><span>       <span class="c-1com">IF</span> <span class="c-0fun">NOT</span>(false_var) <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'0 is false'</span>
+</span><span>       a_string = <span class="c-4str">'YES'</span>
+</span><span>       <span class="c-1com">IF</span> a_string <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'Non-empty string is true'</span>
+</span><span>       <span class="c-1com">IF</span> <span class="c-0fun">NOT</span>(<span class="c-4str">'0.00'</span>) <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'0.00 is false'</span>
+</span><span>       <span class="c-1com">IF</span> <span class="c-0fun">NOT</span>(<span class="c-4str">'-0.00'</span>) <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'"-0.00" is still false - treated as numeric'</span>
+</span><span>    <span class="c-5com">* and this test depends on <span class="c-1com">PRECISION</span></span>
+</span><span>       <span class="c-1com">PRECISION</span> <span class="c-2num">9</span>
+</span><span>       <span class="c-1com">IF</span> <span class="c-0fun">NOT</span>(<span class="c-4str">'0.00000000000001'</span>) <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'0.00000000000001 is false'</span>  \
+</span><span>             <span class="c-1com">ELSE</span> <span class="c-1com">CRT</span> <span class="c-4str">'0.00000000000001 is true'</span>
+</span><span>       <span class="c-1com">PRECISION</span> <span class="c-2num">17</span>
+</span><span>       <span class="c-1com">IF</span> <span class="c-0fun">NOT</span>(<span class="c-4str">'0.00000000000001'</span>) <span class="c-1com">THEN</span> <span class="c-1com">CRT</span> <span class="c-4str">'0.00000000000001 is false'</span> \
+</span><span>             <span class="c-1com">ELSE</span> <span class="c-1com">CRT</span> <span class="c-4str">'0.00000000000001 is true with PRECISION 17'</span>
+</span><span>       <span class="c-5com">*------------------------------------------------------------------------</span>
+</span><span>    ANOTHER.METHOD:
+</span><span>    <span class="c-5com">*</span>
+</span><span>      <span class="c-1com">CRT</span> <span class="c-3typ">@TRUE</span>
+</span><span>      <span class="c-1com">CRT</span> <span class="c-3typ">@FALSE</span>
+</span></pre>
 <p>Compiler warning:
 </p>
 <p><pre>
@@ -466,7 +485,7 @@
      0.00000000000001 is true with PRECISION 17
      1
      0</pre>
-</p><div id="timestamp">Last update: Sat, 16 Jul 2022 19:16 UTC+5</div></div>
+</p><div id="timestamp">Last update: Sat, 16 Jul 2022 20:10 UTC+5</div></div>
 </div>
 <script type="text/javascript">
 
