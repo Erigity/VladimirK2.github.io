@@ -16,7 +16,6 @@
 <li><a href="what_is_tafc.html">What is TAFC</a></li>
 <li><a href="tafc_releases.html">TAFC releases</a></li>
 <li><a href="what_is_t24.html">What is T24</a></li>
-<li><a href="supported_platforms.html">Supported platforms</a></li>
 <li><a href="jbc_jbase_features.html">jBC/jBASE features</a></li>
 </ul>
 <h2>Introduction to some jBC syntax features</h2>
@@ -455,11 +454,29 @@
  code, which identifies the start of a local subroutine.
 </p>
 <h2>EXAMPLE</h2>
-<pre><span>    var_1 = <span class="c-2num">1</span> ; var_2 = <span class="c-2num">2</span> ; var_3 = <span class="c-2num">3</span></span><span>    <span class="c-1com">GOSUB</span> MAKE.ARRAY</span><span>    <span class="c-1com">GOSUB</span> OUTPUT                                                    <span class="c-5com">;* -1^-2^-3</span></span><span>    var_1 = <span class="c-2num">-</span><span class="c-2num">1</span> ; var_2 = <span class="c-2num">-</span><span class="c-2num">2</span> ; var_3 = <span class="c-2num">-</span><span class="c-2num">3</span></span><span>    <span class="c-1com">GOSUB</span> MAKE.ARRAY</span><span>    <span class="c-1com">GOSUB</span> OUTPUT                                                       <span class="c-5com">;* 1^2^3</span></span><span>    var_1 = <span class="c-2num">1</span> ; var_2 = <span class="c-2num">-</span><span class="c-2num">2</span> ; var_3 = <span class="c-2num">3</span></span><span>    <span class="c-1com">GOSUB</span> MAKE.ARRAY</span><span>    <span class="c-1com">GOSUB</span> OUTPUT                                                     <span class="c-5com">;* -1^2^-3</span></span><span>    <span class="c-1com">STOP</span></span><span> <span class="c-5com">*------------------------Subroutines------------------------------------</span></span><span> <span class="c-6lbl">MAKE.ARRAY:</span></span><span>    dyn_array = <span class="c-0fun">NEGS</span>(var_1 : <span class="c-3typ">@FM</span> : var_2 : <span class="c-3typ">@FM</span> : var_3)</span><span>    <span class="c-1com">RETURN</span></span><span> <span class="c-5com">*------------</span></span><span> <span class="c-6lbl">OUTPUT:</span></span><span>    <span class="c-1com">CRT</span> <span class="c-0fun">FMT</span>(dyn_array, <span class="c-4str">'MCP'</span>)</span><span>    <span class="c-1com">RETURN</span></span><span>    </span></pre>
+<pre><span>       var_1 = <span class="c-2num">1</span>  ; var_2 = <span class="c-2num">2</span>  ; var_3 = <span class="c-2num">3</span>
+</span><span>       <span class="c-1com">GOSUB</span> MAKE.ARRAY
+</span><span>       <span class="c-1com">GOSUB</span> <span class="c-1com">OUT</span>PUT                               ;<span class="c-5com">* <span class="c-2num">-1</span>^<span class="c-2num">-2</span>^<span class="c-2num">-3</span></span>
+</span><span>       var_1 = <span class="c-2num">-1</span>  ; var_2 = <span class="c-2num">-2</span> ; var_3 = <span class="c-2num">-3</span>
+</span><span>       <span class="c-1com">GOSUB</span> MAKE.ARRAY
+</span><span>       <span class="c-1com">GOSUB</span> <span class="c-1com">OUT</span>PUT                               ;<span class="c-5com">* <span class="c-2num">1</span>^<span class="c-2num">2</span>^<span class="c-2num">3</span></span>
+</span><span>       var_1 = <span class="c-2num">1</span>  ; var_2 = <span class="c-2num">-2</span> ; var_3 = <span class="c-2num">3</span>
+</span><span>       <span class="c-1com">GOSUB</span> MAKE.ARRAY
+</span><span>       <span class="c-1com">GOSUB</span> <span class="c-1com">OUT</span>PUT                               ;<span class="c-5com">* <span class="c-2num">-1</span>^<span class="c-2num">2</span>^<span class="c-2num">-3</span></span>
+</span><span>       <span class="c-1com">STOP</span>
+</span><span>    <span class="c-5com">*------------------------Subroutines------------------------------------</span>
+</span><span>    MAKE.ARRAY:
+</span><span>       dyn_array = <span class="c-0fun">NEGS</span>(var_1 :<span class="c-3typ">@FM</span>: var_2 :<span class="c-3typ">@FM</span>: var_3)
+</span><span>       <span class="c-1com">RETURN</span>
+</span><span>    <span class="c-5com">*------------</span>
+</span><span>    <span class="c-1com">OUT</span>PUT:
+</span><span>       <span class="c-1com">CRT</span> <span class="c-0fun">FMT</span>(dyn_array, <span class="c-4str">'MCP'</span>)
+</span><span>       <span class="c-1com">RETURN</span>
+</span></pre>
 <p>If you, for example, forget a RETURN in MAKE.ARRAY section the execution will
  continue till the next RETURN, i.e. section OUTPUT will be executed 6 times
  instead of 3.
-</p><div id="timestamp">Last update: Sat, 16 Jul 2022 19:16 UTC+5</div></div>
+</p><div id="timestamp">Last update: Sat, 16 Jul 2022 15:34</div></div>
 </div>
 <script type="text/javascript">
 
