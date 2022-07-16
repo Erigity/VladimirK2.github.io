@@ -16,7 +16,6 @@
 <li><a href="what_is_tafc.html">What is TAFC</a></li>
 <li><a href="tafc_releases.html">TAFC releases</a></li>
 <li><a href="what_is_t24.html">What is T24</a></li>
-<li><a href="supported_platforms.html">Supported platforms</a></li>
 <li><a href="jbc_jbase_features.html">jBC/jBASE features</a></li>
 </ul>
 <h2>Introduction to some jBC syntax features</h2>
@@ -446,11 +445,17 @@
  code readability. You can combine statements with comments (though as soon as
  you have a comment, the following statements turn to comments as well):
 </p>
-<pre><span>    V.VAR = <span class="c-2num">1</span> ; V.VAR ++ ; <span class="c-1com">CRT</span> V.VAR</span><span>    V.VAR --         <span class="c-5com">;* comment starts here so no "1" in the output ; CRT V.VAR</span></span><span>    V.VAR -- ; <span class="c-1com">CRT</span> V.VAR                                 <span class="c-5com">;* 0 will be displayed</span></span><span>    </span></pre>
+<pre><span>    V.VAR = <span class="c-2num">1</span>  ;  V.VAR++  ;  <span class="c-1com">CRT</span> V.VAR
+</span><span>    V.VAR-- ;<span class="c-5com">* comment starts here so no <span class="c-4str">"1"</span> in the output ; <span class="c-1com">CRT</span> V.VAR</span>
+</span><span>    V.VAR-- ; <span class="c-1com">CRT</span> V.VAR  ;<span class="c-5com">* <span class="c-2num">0</span> will be displayed</span>
+</span></pre>
 <p>Conditional statements are also supported (though code readability suffers in
  the following example):
 </p>
-<pre><span>    var_1 = <span class="c-2num">1</span> ; var_2 = <span class="c-2num">2</span> ; <span class="c-1com">IF</span> var_1 + var_2 <span class="c-1com">EQ</span> <span class="c-2num">3</span> <span class="c-1com">THEN</span></span><span>       <span class="c-1com">CRT</span> var_1, <span class="c-4str">'+'</span>, var_2, <span class="c-4str">'= 3'</span></span><span>    <span class="c-1com">END</span></span><span>    </span></pre><div id="timestamp">Last update: Sat, 16 Jul 2022 19:16 UTC+5</div></div>
+<pre><span>    var_1 = <span class="c-2num">1</span> ; var_2 = <span class="c-2num">2</span> ; <span class="c-1com">IF</span> var_1 + var_2 <span class="c-1com">EQ</span> <span class="c-2num">3</span> <span class="c-1com">THEN</span>
+</span><span>       <span class="c-1com">CRT</span> var_1, <span class="c-4str">'+'</span>, var_2, <span class="c-4str">'= 3'</span>
+</span><span>    <span class="c-1com">END</span>
+</span></pre><div id="timestamp">Last update: Sat, 16 Jul 2022 20:10 UTC+5</div></div>
 </div>
 <script type="text/javascript">
 
