@@ -446,11 +446,13 @@
 <pre><span>       V.LINE = <span class="c-4str">'The report for the year '</span> :<span class="c-3typ">@FM</span>: V.YEAR : <span class="c-4str">', prepared at '</span> \
 </span><span>            : <span class="c-0fun">TIMEDATE</span>()
 </span></pre>
+<p><strong><em>TAFJ note: routine with such line extension won't even compile.</strong></em>
+</p>
 <p>Or - if line ends with a comma - that's not necessary:
 </p>
 <pre><span>       V.STAT = <span class="c-0fun">IOCTL</span>(F.TEST.FILE,
 </span><span>             JIOCTL_COMMAND_FINDRECORD_EXTENDED, V.NAME)
-</span></pre><div id="timestamp">Last update: Sat, 16 Jul 2022 15:34</div></div>
+</span></pre><div id="timestamp">Last update: Wed, 24 Aug 2022 12:16</div></div>
 </div>
 <script type="text/javascript">
 
