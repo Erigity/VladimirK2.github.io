@@ -462,7 +462,13 @@
 <pre><span>        A = <span class="c-2num">1</span> :<span class="c-3typ">@SM</span>: <span class="c-2num">4</span> :<span class="c-3typ">@VM</span>: <span class="c-2num">4</span> :<span class="c-3typ">@SM</span>: <span class="c-2num">1</span>
 </span><span>        B = <span class="c-2num">1</span> :<span class="c-3typ">@SM</span>: <span class="c-2num">1</span> - <span class="c-2num">1</span> :<span class="c-3typ">@VM</span>: <span class="c-2num">2</span>
 </span><span>        <span class="c-1com">PRINT</span> <span class="c-0fun">OCONV</span>( <span class="c-0fun">ANDS</span>(A, B), <span class="c-4str">'MCP'</span> )    ;<span class="c-5com">*  <span class="c-2num">1</span>\<span class="c-2num">0</span>]<span class="c-2num">1</span>\<span class="c-2num">0</span></span>
-</span></pre><div id="timestamp">Last update: Sat, 16 Jul 2022 15:34</div></div>
+</span></pre>
+<p><strong><em>TAFJ note: in the following example output is 1^1]0]1\ (trailing 0 is missing):</strong></em>
+</p>
+<pre><span>       dyn_arr_one = <span class="c-2num">1</span> :<span class="c-3typ">@FM</span>: <span class="c-2num">1</span> :<span class="c-3typ">@VM</span>: <span class="c-2num">0</span> :<span class="c-3typ">@VM</span>: <span class="c-2num">1</span> :<span class="c-3typ">@SM</span>: <span class="c-2num">1</span>
+</span><span>       dyn_arr_two = <span class="c-2num">1</span> :<span class="c-3typ">@FM</span>: <span class="c-2num">1</span> :<span class="c-3typ">@VM</span>: <span class="c-2num">1</span> :<span class="c-3typ">@VM</span>: <span class="c-2num">1</span>
+</span><span>       <span class="c-1com">CRT</span> <span class="c-0fun">ANDS</span>(dyn_arr_one, dyn_arr_two)
+</span></pre><div id="timestamp">Last update: Tue, 30 Aug 2022 11:20</div></div>
 </div>
 <script type="text/javascript">
 

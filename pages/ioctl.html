@@ -512,7 +512,10 @@
  drivers.
 </p>
 <p><em>JBC_COMMAND_GETFILENAME COMMAND</em>
- Using this command to the IOCTL function, you can determine the exact
+</p>
+<p><strong><em>TAFJ note: not supported.</strong></em>
+</p>
+<p>Using this command to the IOCTL function, you can determine the exact
  file name that was used to open the file. This is helpful because
  jEDI uses Q pointers, F pointers and the JEDIFILEPATH environment
  variable to actually open the file, and the application can never be
@@ -610,6 +613,8 @@
 <p><a name="JIOCTL_COMMAND_FILESTATUS"/>
 </p>
 <p><em>JIOCTL_COMMAND_FILESTATUS COMMAND</em>
+</p>
+<p><strong><em>TAFJ note: not supported.</strong></em>
 </p>
 <p>The JIOCTL_COMMAND_FILESTATUS command will return an attribute delimited list of the status of the file to the caller.
 </p>
@@ -774,7 +779,7 @@
 </span><span>    <span class="c-1com">END</span>
 </span><span>    <span class="c-1com">PRINT</span> <span class="c-4str">"The lock ID for the key is "</span> : parm
 </span><span>    <span class="c-1com">PRINT</span> <span class="c-4str">"Our process id is "</span> : getpid()
-</span></pre><div id="timestamp">Last update: Sat, 16 Jul 2022 15:34</div></div>
+</span></pre><div id="timestamp">Last update: Tue, 30 Aug 2022 11:10</div></div>
 </div>
 <script type="text/javascript">
 

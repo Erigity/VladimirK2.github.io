@@ -462,6 +462,8 @@
  a match is not found then the function returns 0. If the regular expression
  was invalid then the function returns -1.
 </p>
+<p><strong><em>A positive TAFJ note: REGEXP() function now works under Windows.</strong></em>
+</p>
 <h2>EXAMPLES</h2>
 <pre><span>       String = <span class="c-4str">"jBASE Software Inc."</span>    ;<span class="c-5com">* <span class="c-2num">4</span> (position of matching pattern -</span>
 </span><span>       <span class="c-1com">CRT</span> <span class="c-0fun">REGEXP</span>(String, <span class="c-4str">'S[^t]*'</span>)      ;<span class="c-5com">*   <span class="c-4str">"S"</span> followed by <span class="c-4str">"t"</span> later on)</span>
@@ -483,7 +485,9 @@
 </span><span>       <span class="c-1com">CRT</span> <span class="c-0fun">REGEXP</span>(<span class="c-4str">'RU'</span>, <span class="c-4str">'([A-QS-Z][A-Z]|[R][A-RT-Z])'</span>)                       ;<span class="c-5com">* <span class="c-2num">1</span></span>
 </span><span>    <span class="c-5com">* negative lookahead assertion isn<span class="c-4str">'t supported ("all not containing '</span>bar'")</span>
 </span><span>       <span class="c-1com">CRT</span> <span class="c-0fun">REGEXP</span>(<span class="c-4str">'bar'</span>, <span class="c-4str">'"^(?!.*?bar).*"'</span>)                                 ;<span class="c-5com">* <span class="c-2num">-1</span></span>
-</span></pre><div id="timestamp">Last update: Sat, 16 Jul 2022 15:34</div></div>
+</span></pre>
+<p><strong><em>Another positive TAFJ note: negative lookahead now works.</strong></em>
+</p><div id="timestamp">Last update: Tue, 30 Aug 2022 15:52</div></div>
 </div>
 <script type="text/javascript">
 
