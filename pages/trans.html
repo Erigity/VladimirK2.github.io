@@ -530,7 +530,14 @@
 </p>
 <p><pre>
      A]1]Vendor Name]]]]]L]30</pre>
-</p><div id="timestamp">Last update: Sat, 16 Jul 2022 15:34</div></div>
+</p>
+<p><strong><em>TAFJ note: TRANS() function returns record @ID instead of field contents. Example (on Temenos Model Bank):</strong></em>
+</p>
+<pre><span>       <span class="c-1com">CRT</span> <span class="c-0fun">TRANS</span>(<span class="c-4str">'F.COMPANY'</span>, <span class="c-4str">'EU0010001'</span>, <span class="c-2num">2</span>, <span class="c-4str">'X'</span>)
+</span><span>       <span class="c-5com">* expected output: Model Bank - Europe</span>
+</span><span>       <span class="c-5com">* output: EU0010001</span>
+</span><span>       <span class="c-5com">* workaround: use XLATE</span>
+</span></pre><div id="timestamp">Last update: Wed, 31 Aug 2022 10:21</div></div>
 </div>
 <script type="text/javascript">
 

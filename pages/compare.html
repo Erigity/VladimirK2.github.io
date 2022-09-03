@@ -468,15 +468,17 @@
 </span><span>    R2 = <span class="c-0fun">COMPARE</span>(A, B, <span class="c-4str">'R'</span>)
 </span><span>    <span class="c-1com">CRT</span> R1, R2
 </span></pre>
-<p>The code above displays 1 -1, which indicates that XY999 is greater than
+<p>The code above should display 1 -1, which indicates that XY999 is greater than
  XY1000 in a left justified comparison and XY999 is less than XY1000 in
  a right justified comparison.
+</p>
+<p><strong><em>TAFC/TAFJ compatibility note: this code outputs 1  1 under TAFC R13/R19/R22. TAFJ is OK.</strong></em>
 </p>
 <h2>INTERNATIONAL MODE</h2>
 <p>When using the COMPARE function in International Mode, the function will
  use the currently configured locale to determine the rules by which each
  string is considered less than or greater than the other will.
-</p><div id="timestamp">Last update: Sat, 16 Jul 2022 15:34</div></div>
+</p><div id="timestamp">Last update: Wed, 31 Aug 2022 12:16</div></div>
 </div>
 <script type="text/javascript">
 

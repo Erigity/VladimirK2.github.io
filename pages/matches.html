@@ -480,30 +480,35 @@
 </p>
 <h2>EXAMPLES</h2>
 <pre><span>    <span class="c-5com">* T24 IDs matching</span>
-</span><span>       transfer_id = <span class="c-4str">'FT130172HQJ4'</span>
-</span><span>       <span class="c-1com">CRT</span> transfer_id <span class="c-1com">MATCHES</span> <span class="c-4str">"<span class="c-4str">'FT'</span>5N5X"</span>           ;<span class="c-5com">*  <span class="c-2num">1</span></span>
-</span><span>       hist_id = <span class="c-4str">'FT130172HQJ4;1'</span>
-</span><span>       <span class="c-1com">CRT</span> hist_id <span class="c-1com">MATCHES</span> <span class="c-4str">"<span class="c-4str">'FT'</span>5N5X"</span>               ;<span class="c-5com">*  <span class="c-2num">0</span></span>
-</span><span>       <span class="c-1com">CRT</span> hist_id <span class="c-1com">MATCHES</span> <span class="c-4str">"<span class="c-4str">'FT'</span>5N5X;1N"</span>            ;<span class="c-5com">*  <span class="c-2num">1</span></span>
+</span><span>        transfer_id = <span class="c-4str">'FT130172HQJ4'</span>
+</span><span>        <span class="c-1com">CRT</span> transfer_id <span class="c-1com">MATCHES</span> <span class="c-4str">"<span class="c-4str">'FT'</span>5N5X"</span>           ;<span class="c-5com">*  <span class="c-2num">1</span></span>
+</span><span>        hist_id = <span class="c-4str">'FT130172HQJ4;1'</span>
+</span><span>        <span class="c-1com">CRT</span> hist_id <span class="c-1com">MATCHES</span> <span class="c-4str">"<span class="c-4str">'FT'</span>5N5X"</span>               ;<span class="c-5com">*  <span class="c-2num">0</span></span>
+</span><span>        <span class="c-1com">CRT</span> hist_id <span class="c-1com">MATCHES</span> <span class="c-4str">"<span class="c-4str">'FT'</span>5N5X;1N"</span>            ;<span class="c-5com">*  <span class="c-2num">1</span></span>
 </span><span>    <span class="c-5com">* date</span>
-</span><span>       start_date = <span class="c-4str">'2011-10-25'</span>
-</span><span>       <span class="c-1com">CRT</span> start_date <span class="c-1com">MATCHES</span> <span class="c-4str">"4N<span class="c-4str">'-'</span>2N<span class="c-4str">'-'</span>2N"</span>        ;<span class="c-5com">*  <span class="c-2num">1</span></span>
+</span><span>        start_date = <span class="c-4str">'2011-10-25'</span>
+</span><span>        <span class="c-1com">CRT</span> start_date <span class="c-1com">MATCHES</span> <span class="c-4str">"4N<span class="c-4str">'-'</span>2N<span class="c-4str">'-'</span>2N"</span>        ;<span class="c-5com">*  <span class="c-2num">1</span></span>
+</span><span>    <span class="c-5com">* a fresh example: dash can be used to indicate <span class="c-4str">"from"-"to"</span> pattern:</span>
+</span><span>        start_date = <span class="c-4str">'2022/08/31'</span>
+</span><span>        start_date_short = <span class="c-4str">'22/08/31'</span>
+</span><span>        <span class="c-1com">CRT</span> start_date <span class="c-1com">MATCHES</span> <span class="c-4str">"2-4N<span class="c-4str">'/'</span>2N<span class="c-4str">'/'</span>2N"</span>               ;<span class="c-5com">* <span class="c-2num">1</span></span>
+</span><span>        <span class="c-1com">CRT</span> start_date_short <span class="c-1com">MATCHES</span> <span class="c-4str">"2-4N<span class="c-4str">'/'</span>2N<span class="c-4str">'/'</span>2N"</span>         ;<span class="c-5com">* <span class="c-2num">1</span></span>
 </span><span>    <span class="c-5com">* emulations compatibility</span>
-</span><span>       cust_name = <span class="c-4str">'JOHN DORY'</span>
-</span><span>       <span class="c-1com">CRT</span> cust_name <span class="c-1com">MATCH</span> <span class="c-4str">"JOHN..."</span>            ;<span class="c-5com">*  <span class="c-2num">1</span> under prime, <span class="c-2num">0</span> under jbase</span>
-</span><span>       <span class="c-1com">CRT</span> cust_name <span class="c-1com">MATCH</span> <span class="c-4str">"<span class="c-4str">'JOHN'</span>..."</span>          ;<span class="c-5com">*  <span class="c-2num">1</span> under prime, <span class="c-2num">0</span> under jbase</span>
-</span><span>       <span class="c-1com">CRT</span> cust_name <span class="c-1com">MATCH</span> <span class="c-4str">"<span class="c-4str">'JOHN'</span>0X"</span>           ;<span class="c-5com">*  <span class="c-2num">1</span> under both</span>
-</span><span>       <span class="c-1com">CRT</span> cust_name <span class="c-1com">MATCH</span> <span class="c-4str">"<span class="c-4str">'John'</span>..."</span>          ;<span class="c-5com">*  <span class="c-2num">0</span> under both</span>
+</span><span>        cust_name = <span class="c-4str">'JOHN DORY'</span>
+</span><span>        <span class="c-1com">CRT</span> cust_name <span class="c-1com">MATCH</span> <span class="c-4str">"JOHN..."</span>            ;<span class="c-5com">*  <span class="c-2num">1</span> under prime, <span class="c-2num">0</span> under jbase</span>
+</span><span>        <span class="c-1com">CRT</span> cust_name <span class="c-1com">MATCH</span> <span class="c-4str">"<span class="c-4str">'JOHN'</span>..."</span>          ;<span class="c-5com">*  <span class="c-2num">1</span> under prime, <span class="c-2num">0</span> under jbase</span>
+</span><span>        <span class="c-1com">CRT</span> cust_name <span class="c-1com">MATCH</span> <span class="c-4str">"<span class="c-4str">'JOHN'</span>0X"</span>           ;<span class="c-5com">*  <span class="c-2num">1</span> under both</span>
+</span><span>        <span class="c-1com">CRT</span> cust_name <span class="c-1com">MATCH</span> <span class="c-4str">"<span class="c-4str">'John'</span>..."</span>          ;<span class="c-5com">*  <span class="c-2num">0</span> under both</span>
 </span><span>    <span class="c-5com">* <span class="c-4str">"C"</span> - alphanumeric - isn't supported at all under prime</span>
-</span><span>       <span class="c-1com">CRT</span> <span class="c-4str">'2HQJ4'</span> <span class="c-1com">MATCHES</span> <span class="c-4str">"5C"</span>                 ;<span class="c-5com">* <span class="c-2num">1</span> under jbase emulation</span>
+</span><span>        <span class="c-1com">CRT</span> <span class="c-4str">'2HQJ4'</span> <span class="c-1com">MATCHES</span> <span class="c-4str">"5C"</span>                 ;<span class="c-5com">* <span class="c-2num">1</span> under jbase emulation</span>
 </span><span>    <span class="c-5com">* numbers</span>
-</span><span>       <span class="c-1com">CRT</span> <span class="c-2num">9</span>.<span class="c-2num">99</span> <span class="c-1com">MATCHES</span> <span class="c-4str">"0N<span class="c-4str">'.'</span>2N"</span>               ;<span class="c-5com">* <span class="c-2num">1</span></span>
-</span><span>       <span class="c-1com">CRT</span> <span class="c-4str">'.99'</span> <span class="c-1com">MATCHES</span> <span class="c-4str">"0N<span class="c-4str">'.'</span>2N"</span>              ;<span class="c-5com">* <span class="c-2num">1</span></span>
+</span><span>        <span class="c-1com">CRT</span> <span class="c-2num">9</span>.<span class="c-2num">99</span> <span class="c-1com">MATCHES</span> <span class="c-4str">"0N<span class="c-4str">'.'</span>2N"</span>               ;<span class="c-5com">* <span class="c-2num">1</span></span>
+</span><span>        <span class="c-1com">CRT</span> <span class="c-4str">'.99'</span> <span class="c-1com">MATCHES</span> <span class="c-4str">"0N<span class="c-4str">'.'</span>2N"</span>              ;<span class="c-5com">* <span class="c-2num">1</span></span>
 </span><span>    <span class="c-5com">* avoid messing up data with patterns (example for prime):</span>
-</span><span>       cust_address = <span class="c-4str">'3RD FLOOR, 17A ELM STREET'</span>
-</span><span>       <span class="c-1com">CRT</span> cust_address <span class="c-1com">MATCH</span> <span class="c-4str">"...17A..."</span>   ;<span class="c-5com">* <span class="c-2num">0</span> - 17A means <span class="c-2num">17</span> alpha characters</span>
-</span><span>       <span class="c-1com">CRT</span> cust_address <span class="c-1com">MATCH</span> <span class="c-4str">"...<span class="c-4str">'17A'</span>..."</span> ;<span class="c-5com">* <span class="c-2num">1</span> - here <span class="c-4str">'17A'</span> is a string to search</span>
-</span></pre><div id="timestamp">Last update: Sat, 16 Jul 2022 15:34</div></div>
+</span><span>        cust_address = <span class="c-4str">'3RD FLOOR, 17A ELM STREET'</span>
+</span><span>        <span class="c-1com">CRT</span> cust_address <span class="c-1com">MATCH</span> <span class="c-4str">"...17A..."</span>   ;<span class="c-5com">* <span class="c-2num">0</span> - 17A means <span class="c-2num">17</span> alpha characters</span>
+</span><span>        <span class="c-1com">CRT</span> cust_address <span class="c-1com">MATCH</span> <span class="c-4str">"...<span class="c-4str">'17A'</span>..."</span> ;<span class="c-5com">* <span class="c-2num">1</span> - here <span class="c-4str">'17A'</span> is a string to search</span>
+</span></pre><div id="timestamp">Last update: Wed, 31 Aug 2022 12:10</div></div>
 </div>
 <script type="text/javascript">
 

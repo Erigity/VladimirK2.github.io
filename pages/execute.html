@@ -517,11 +517,20 @@
 </p>
 <p><strong><em>TAFJ note 2: RETURNING clause in EXECUTE 'COUNT' doesn't work.</strong></em>
 </p>
-<p><strong><em>TAFJ note 3: EXECUTE of 2 commands delimited with @FM returns code from the first command, not from the second one.</strong></em>
+<p><strong><em>TAFJ note 3: EXECUTE of 2 commands delimited with @FM returns code from the first command, not from the second one. Example:</strong></em>
 </p>
+<pre><span>       <span class="c-1com">EXECUTE</span> <span class="c-4str">'SELECT F.SPF'</span> :<span class="c-3typ">@FM</span>: <span class="c-4str">'SAVE-LIST spf'</span> <span class="c-1com">CAPTURING</span> output <span class="c-1com">RETURNING</span> ret_code
+</span><span>       <span class="c-1com">CRT</span> <span class="c-0fun">CONVERT</span>(<span class="c-3typ">@FM</span>:<span class="c-3typ">@VM</span>:<span class="c-3typ">@SM</span>, <span class="c-4str">'^]\'</span>, ret_code)    
+</span><span>       <span class="c-5com">*  expected output: <span class="c-2num">241</span>]<span class="c-2num">1</span>]sel_list]Savelist_msg</span>
+</span><span>       <span class="c-5com">*  output: <span class="c-2num">404</span>]<span class="c-2num">1</span>]QLNUMSEL </span>
+</span></pre>
 <p><strong><em>TAFJ note 4: PASSLIST clause in EXECUTE doesn't work.</strong></em>
 </p>
 <p><strong><em>TAFJ note 5: EXIT() in EXECUTEd program stops the EXECUTing one as well.</strong></em>
+</p>
+<p><strong><em>Final TAFJ note: I couldn't (yet) find a way to execute an OS command or external program.... It executes only another Java class... And if one is missing - like I-DUMP or LIST-ITEM - execution fails:</strong></em>
+</p>
+<p><pre>   Cannot find 'I-DUMP' (class : 'com.temenos.t24.I_m_DUMP_cl')</pre>
 </p>
 <h2>EXAMPLE</h2>
 <pre><span>       V.CMD = <span class="c-4str">'COUNT .'</span>
@@ -554,7 +563,7 @@
      [/dev/hd3         768.00    505.89   35%     8812     7% /tmp]
      [/dev/hd1         128.00    121.68    5%      185     1% /home]
      [/proc                 -         -    -         -     -  /proc]</pre>
-</p><div id="timestamp">Last update: Thu, 25 Aug 2022 13:13</div></div>
+</p><div id="timestamp">Last update: Wed, 31 Aug 2022 09:39</div></div>
 </div>
 <script type="text/javascript">
 
