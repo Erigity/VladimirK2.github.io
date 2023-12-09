@@ -458,11 +458,18 @@
  available and then truncates the answer to the required
  PRECISION.
 </p>
+<p><strong><em>TAFJ R23 note: incorrect rounding of results.</strong></em>
+</p>
 <h2>EXAMPLE</h2>
-<pre><span>    <span class="c-1com">FOR</span> I = <span class="c-2num">1</span> <span class="c-1com">TO</span> <span class="c-2num">1000000</span>
-</span><span>        J = <span class="c-0fun">SQRT</span>(I)
-</span><span>    <span class="c-1com">NEXT</span> I
-</span></pre><div id="timestamp">Last update: Sat, 16 Jul 2022 15:34</div></div>
+<pre><span>    <span class="c-1com">PRECISION</span> <span class="c-2num">6</span>
+</span><span>    <span class="c-5com">*</span>
+</span><span>    <span class="c-1com">FOR</span> i = <span class="c-2num">1</span> <span class="c-1com">TO</span> <span class="c-2num">10</span>
+</span><span>        <span class="c-1com">CRT</span> <span class="c-0fun">SQRT</span>(i) : <span class="c-4str">' | '</span> :
+</span><span>    <span class="c-1com">NEXT</span> i
+</span></pre>
+<pre><span>    <span class="c-5com">* TAFC: <span class="c-2num">1</span> | <span class="c-2num">1</span>.<span class="c-2num">414214</span> | <span class="c-2num">1</span>.<span class="c-2num">732051</span> | <span class="c-2num">2</span> | <span class="c-2num">2</span>.<span class="c-2num">236068</span> | <span class="c-2num">2</span>.<span class="c-2num">44949</span> | <span class="c-2num">2</span>.<span class="c-2num">645751</span> | <span class="c-2num">2</span>.<span class="c-2num">828427</span> | <span class="c-2num">3</span> | <span class="c-2num">3</span>.<span class="c-2num">162278</span> |</span>
+</span><span>    <span class="c-5com">* TAFJ: <span class="c-2num">1</span> | <span class="c-2num">1</span> | <span class="c-2num">2</span> | <span class="c-2num">2</span> | <span class="c-2num">2</span>.<span class="c-2num">2</span> | <span class="c-2num">2</span>.<span class="c-2num">4</span> | <span class="c-2num">2</span>.<span class="c-2num">6</span> | <span class="c-2num">2</span>.<span class="c-2num">8</span> | <span class="c-2num">3</span> | <span class="c-2num">3</span>.<span class="c-2num">2</span> |</span>
+</span></pre><div id="timestamp">Last update: Thu, 07 Dec 2023 10:05</div></div>
 </div>
 <script type="text/javascript">
 
