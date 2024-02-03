@@ -478,7 +478,35 @@
 </span><span>          <span class="c-1com">CRT</span> phrase_part:
 </span><span>          <span class="c-1com">EXECUTE</span> this_prog : <span class="c-4str">' -2 "you firstly need "'</span>
 </span><span>       <span class="c-1com">END</span>
-</span></pre><div id="timestamp">Last update: Sat, 16 Jul 2022 15:34</div></div>
+</span></pre>
+<p><strong><em>TAFJ R23 note: results are corrupted after EXECUTE:</strong></em>
+</p>
+<p>test.b:
+</p>
+<pre><span>       <span class="c-1com">PROGRAM</span> test
+</span><span>       <span class="c-5com">*</span>
+</span><span>       <span class="c-1com">CRT</span> <span class="c-0fun">SENTENCE</span>(<span class="c-2num">2</span>)
+</span><span>       <span class="c-1com">EXECUTE</span> <span class="c-4str">'LIST F.SPF (N'</span> <span class="c-1com">CAPTURING</span> output
+</span><span>       <span class="c-5com">*</span>
+</span><span>       <span class="c-1com">CRT</span> <span class="c-0fun">SENTENCE</span>(<span class="c-2num">2</span>)
+</span><span>       <span class="c-5com">*</span>
+</span><span>       <span class="c-1com">STOP</span>
+</span><span>       <span class="c-1com">END</span>
+</span></pre>
+<p>TAFC:
+</p>
+<pre><span>    test arg1 arg2
+</span><span>    &gt&gt&gt
+</span><span>    arg2
+</span><span>    arg2
+</span></pre>
+<p>TAFJ:
+</p>
+<pre><span>    trun test arg1 arg2
+</span><span>    &gt&gt&gt
+</span><span>    arg2
+</span><span>    (N
+</span></pre><div id="timestamp">Last update: Thu, 01 Feb 2024 09:56</div></div>
 </div>
 <script type="text/javascript">
 
